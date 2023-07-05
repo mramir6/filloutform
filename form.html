@@ -19,5 +19,56 @@
   <main>
     <section>
       <h2>Form</h2>
-      <form>
-        <label
+      <form id="myForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="subscription">Subscribe to Newsletter:</label>
+        <input type="checkbox" id="subscription" name="subscription">
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 My Website. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+
+      // Get form data
+      var firstName = document.getElementById('firstName').value;
+      var lastName = document.getElementById('lastName').value;
+      var email = document.getElementById('email').value;
+      var subscription = document.getElementById('subscription').checked;
+
+      // Make identity call or perform any desired action
+      identifyUser(firstName, lastName, email, subscription);
+
+      // Clear form inputs
+      document.getElementById('firstName').value = '';
+      document.getElementById('lastName').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('subscription').checked = false;
+    });
+
+    function identifyUser(firstName, lastName, email, subscription) {
+      // Replace this with your actual identity call or desired action
+      console.log('Identity call:');
+      console.log('First Name:', firstName);
+      console.log('Last Name:', lastName);
+      console.log('Email:', email);
+      console.log('Subscription:', subscription);
+    }
+  </script>
+</body>
+</html>
